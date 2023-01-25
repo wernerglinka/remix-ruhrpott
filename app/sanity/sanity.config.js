@@ -1,6 +1,7 @@
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 import { codeInput } from '@sanity/code-input';
+import { visionTool }  from '@sanity/vision';  
 
 import { projectDetails } from "~/sanity/projectDetails";
 import schema from "~/sanity/schema";
@@ -13,6 +14,7 @@ export const config = defineConfig({
   plugins: [
     deskTool({ structure: ruhrpottStructure }),
     codeInput(),
+    visionTool(),
   ],
   basePath: `/studio`,
   schema: {

@@ -12,6 +12,7 @@
     "@remix-run/node": "^1.11.1",
     "@remix-run/react": "^1.11.1",
     "@sanity/code-input": "^4.0.0",
+    "@sanity/vision": "^3.2.5",
     "cross-env": "^7.0.3",
     "date-fns": "^2.29.3",
     "react": "^18.2.0",
