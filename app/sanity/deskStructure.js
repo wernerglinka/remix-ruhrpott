@@ -2,7 +2,7 @@ import {FiSettings, FiMenu, FiUsers, FiGlobe, FiDribbble, FiTool} from "react-ic
 
 export default (S) =>
   S.list()
-    .title('Root')
+    .title('Ruhrpott Content')
     .items([
       // Add the settings documents first
       S.listItem()
