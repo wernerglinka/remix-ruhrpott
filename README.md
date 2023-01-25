@@ -1,62 +1,28 @@
-# Welcome to Remix!
+<p align="center">
+  <a href="https://www.metalsmith.io">
+    <img alt="Metalsmith" src="https://www.glinka.co/assets/images/metalsmith-logo-bug.png" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  Remix Ruhrpott
+</h1>
+<p align="center"><i>A Remix Sanity Sandbox</i></p>
 
-- [Remix Docs](https://remix.run/docs)
-- [Netlify Functions](https://www.netlify.com/products/functions/)
+![Screenshot](https://cdn.sanity.io/images/349a1vg2/production/5f587cb30cc531d7c09bc24d544c5b3e53b9aa92-2600x2096.png?w=1200&h=1200&fit=max&auto=format)
 
-## Netlify Setup
+**Remix Ruhrpott** is a port of the [Metalsmith Ruhrpott](https://github.com/wernerglinka/ruhrpott-web) website to the [Remix](https://remix.run) framework. Remix Ruhrpott uses the Sanity content for the Metalsmith Ruhrpott site and host it on [Netlify](https://remix-ruhrpott.netlify.app/).
 
-1. Install the [Netlify CLI](https://www.netlify.com/products/dev/):
+## Background
+Ruhrpott is a proof-of-concept website built to demonstrate the use of structured content in a static website created with the [Metalsmith Static Site Generator](https://metalsmith.io). The [Sanity content management system](https://www.sanity.io/) is a perfect match to achieve this objective.
 
-```sh
-npm i -g netlify-cli
-```
+I did not want to use greek text and boring images, so I turned to the place of my youth for inspiration, the Ruhrpott. The photos and text tell little stories about where I grew up, and the website structure and design methodology are all about Metalsmith, Sanity, and structured content.
 
-If you have previously installed the Netlify CLI, you should update it to the latest version:
+Most images used on this website are by [Daniel Mennerich](https://www.flickr.com/photos/danielmennerich/), who makes his art available on Flickr under a [Creative Commons](https://creativecommons.org/licenses/by-nc-nd/2.0/) license.
 
-```sh
-npm i -g netlify-cli@latest
-```
+The website is meant for devs who like to explore Metalsmith in general and a Sanity integration in particular.
 
-2. Sign up and log in to Netlify:
+Visit the [Ruhrpott Website](https://ruhrpott.netlify.app)
 
-```sh
-netlify login
-```
+The blog section of this website includes several posts that provide an overview of essential implementation details. I used hero's of mine, for placeholder authors. They did not write the blogposts, they are all dead... just saying in case that wasn't clear.
 
-3. Create a new site:
-
-```sh
-netlify init
-```
-
-## Development
-
-The Remix dev server starts your app in development mode, rebuilding assets on file changes. To start the Remix dev server:
-
-```sh
-npm run dev
-```
-
-Open up [http://localhost:3000](http://localhost:3000), and you should be ready to go!
-
-The Netlify CLI builds a production version of your Remix App Server and splits it into Netlify Functions that run locally. This includes any custom Netlify functions you've developed. The Netlify CLI runs all of this in its development mode.
-
-```sh
-netlify dev
-```
-
-Open up [http://localhost:3000](http://localhost:3000), and you should be ready to go!
-
-Note: When running the Netlify CLI, file changes will rebuild assets, but you will not see the changes to the page you are on unless you do a browser refresh of the page. Due to how the Netlify CLI builds the Remix App Server, it does not support hot module reloading.
-
-## Deployment
-
-There are two ways to deploy your app to Netlify, you can either link your app to your git repo and have it auto deploy changes to Netlify, or you can deploy your app manually. If you've followed the setup instructions already, all you need to do is run this:
-
-```sh
-# preview deployment
-netlify deploy --build
-
-# production deployment
-netlify deploy --build --prod
-```
+## Join the Metalsmith community at [Gitter](https://gitter.im/metalsmith/community).
