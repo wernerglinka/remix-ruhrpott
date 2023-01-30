@@ -40,7 +40,7 @@ export default ({ sections }) => {
       // build the styles class for the section wrapper
       const sectionWrapperStyles = {
         backgroundColor: section.background?.color ? section.background.color : 'none',
-        backgroundImage: section.background?.image ? url(${section.background.image}) : 'none',
+        backgroundImage: section.background?.image ? `url(${section.background.image})` : 'none',
       };
 
       const SectionTemplate = Templates[section.sectionType];

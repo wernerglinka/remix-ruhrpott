@@ -2,7 +2,7 @@ import {useLoaderData} from '@remix-run/react';
 import groq from 'groq';
 import {getClient} from '~/sanity/client';
 
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import Templates from '../templates';
 
 export const meta = (data) => {
