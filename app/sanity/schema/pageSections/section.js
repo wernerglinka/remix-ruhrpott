@@ -191,7 +191,6 @@ export default defineType({
       title: 'sectionType',
     },
     prepare(selection) {
-      console.log(selection);
       const { title } = selection;
       return {
         title: title,
