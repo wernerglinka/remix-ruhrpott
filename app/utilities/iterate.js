@@ -17,8 +17,8 @@ export default iterate = (obj) => {
     if(key === "portableTextBody" || key === "blogContent") {
       obj[key] = blocksToMarkdown(obj[key], {
         serializers: serializers(client),
-        projectId: projectDetails.projectId,
-        dataset: projectDetails.dataset,
+        projectId: "349a1vg2",
+        dataset: "production",
       });
     }
 
