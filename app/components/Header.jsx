@@ -1,4 +1,4 @@
-import Logo from './SiteLogo'
+import Logo from './siteLogo'
 
 export default function Header() {
   return (
