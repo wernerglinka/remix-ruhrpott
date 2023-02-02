@@ -1,6 +1,6 @@
 import { Info } from 'lucide-react';
 
-export default ResponsiveImage = function({params}) {
+export const ResponsiveImage = function({params}) {
   const lowResImagesrc = `${params.slideImage.imageURL}?w=200&blur=50`;
 
   return (
