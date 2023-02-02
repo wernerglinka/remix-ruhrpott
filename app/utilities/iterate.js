@@ -1,6 +1,6 @@
 import blocksToMarkdown from '@sanity/block-content-to-markdown';
 import imageUrl from '@sanity/image-url';
-import serializers from './serializers';
+import {serializers} from './serializers';
 import {client} from '../sanity/client';
 import {projectDetails} from '../sanity/projectDetails';
 
@@ -10,7 +10,7 @@ import {projectDetails} from '../sanity/projectDetails';
  * 
  * @param {*} obj 
  */
-export default iterate = (obj) => {
+export const iterate = (obj) => {
   Object.keys(obj).forEach(key => {
 
     // transform Portable Text to Markdown

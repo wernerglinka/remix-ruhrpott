@@ -1,6 +1,6 @@
 import imageUrl from '@sanity/image-url';
 
-export default serializers = client => {
+export const serializers = client => {
   // custom serializer for sanity blocks
   // read more: https://www.sanity.io/docs/presenting-block-text
   return {

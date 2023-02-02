@@ -5,7 +5,7 @@ import {getClient} from '~/sanity/client';
 import Layout from '../components/Layout';
 import Templates from '../templates';
 
-import iterate from '../utilities/iterate';
+import {iterate} from '../utilities/iterate';
 
 export const meta = (data) => {
   const {title, description} = data.data;
