@@ -1,6 +1,6 @@
-import ScrollTo from './scrollTo';
-import Text from './text';
-import ResponsiveImage from './responsiveImage';
+import ScrollTo from './ScrollTo';
+import Text from './Text';
+import ResponsiveImage from './ResponsiveImage';
 
 export default function ImageSlider(props) {
 

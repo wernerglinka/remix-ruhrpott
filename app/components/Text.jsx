@@ -1,4 +1,4 @@
-import CTA from './cta'
+import CTA from './Cta'
 
 export default function Text({params}) {
 
