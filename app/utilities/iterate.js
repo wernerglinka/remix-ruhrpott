@@ -2,7 +2,7 @@ import blocksToMarkdown from '@sanity/block-content-to-markdown';
 import imageUrl from '@sanity/image-url';
 import serializers from './serializers';
 import {client} from '../sanity/client';
-import options from '../sanity/projectDetails';
+import projectDetails from '../sanity/projectDetails';
 
 /**
  * iterate
@@ -17,8 +17,8 @@ export default iterate = (obj) => {
     if(key === "portableTextBody" || key === "blogContent") {
       obj[key] = blocksToMarkdown(obj[key], {
         serializers: serializers(client),
-        projectId: options.projectId,
-        dataset: options.dataset,
+        projectId: projectDetails.projectId,
+        dataset: projectDetails.dataset,
       });
     }
 
@@ -31,7 +31,7 @@ export default iterate = (obj) => {
     }
 
     if (typeof obj[key] === 'object' && obj[key] !== null) {
-      iterate(obj[key], client, options)
+      iterate(obj[key])
     }
   })
 };
