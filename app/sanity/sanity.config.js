@@ -3,7 +3,7 @@ import { deskTool } from "sanity/desk";
 import { codeInput } from '@sanity/code-input';
 import { visionTool }  from '@sanity/vision';  
 
-import { projectDetails } from "~/sanity/projectDetails";
+import projectDetails from "~/sanity/projectDetails";
 import schema from "~/sanity/schema";
 import ruhrpottStructure from '~/sanity/deskStructure';
 

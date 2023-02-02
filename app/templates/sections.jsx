@@ -5,6 +5,9 @@ import Templates from './index';
  * the associated template.The component maps through the sections array, assigning 
  * each section type to a template, then renders each section using that template
  * and passing it any props associated with that section.
+ * 
+ * All sectiuons share a common set of props, which are: 
+ * Margin, Padding, Background, Container Class, Container ID, Section Type, and Disabled.
  */
 export default ({ sections }) => {
   

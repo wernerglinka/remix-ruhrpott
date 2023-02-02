@@ -1,4 +1,4 @@
-export const projectDetails = () => {
+export default projectDetails = () => {
   const {
     SANITY_PUBLIC_PROJECT_ID,
     SANITY_PUBLIC_DATASET,

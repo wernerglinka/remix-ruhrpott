@@ -5,6 +5,8 @@ import {getClient} from '~/sanity/client';
 import Layout from '../components/Layout';
 import Templates from '../templates';
 
+import iterate from '../utilities/iterate';
+
 export const meta = (data) => {
   const {title, description} = data.data;
 
@@ -22,6 +24,9 @@ export const loader = async props => {
   if (!page) {
     throw new Response('Nothin...', {status: 404});
   }
+  
+  // transform Sanity portable text blocks to markdown and resolve references
+  iterate(page[0])
 
   return page[0]; 
 }

@@ -1,7 +1,9 @@
+import ImageSlider from '../components/ImageSlider';
+
 export default props => {
 
   return (
-    <p>this is the imageSlider</p>
+    <ImageSlider {...props} />
   )
 }
 
