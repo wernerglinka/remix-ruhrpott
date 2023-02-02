@@ -1,6 +1,6 @@
-import CTA from './Cta'
+import {CTA} from './Cta'
 
-export default function Text({params}) {
+export default Text = function({params}) {
 
   return (
     <>
