@@ -6,8 +6,11 @@ export default projectDetails = () => {
   } = typeof document === "undefined" ? process.env : window.ENV;
 
   return {
-    projectId: SANITY_PUBLIC_PROJECT_ID,
-    dataset: SANITY_PUBLIC_DATASET,
-    apiVersion: SANITY_PUBLIC_API_VERSION,
+    //projectId: SANITY_PUBLIC_PROJECT_ID,
+    //dataset: SANITY_PUBLIC_DATASET,
+    //apiVersion: SANITY_PUBLIC_API_VERSION,
+    projectId:"349a1vg2",
+    dataset:"production",
+    apiVersion:"2022-09-19",
   };
 };
