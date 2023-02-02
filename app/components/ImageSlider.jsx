@@ -1,6 +1,6 @@
 import ScrollTo from './ScrollTo';
 import Text from './Text';
-import Image from './Image';
+import ResponsiveImage from './ResponsiveImage';
 
 export default function ImageSlider(props) {
 
@@ -14,7 +14,7 @@ export default function ImageSlider(props) {
               id={`slide${index}`}
               className={`slide jsSlide ${index === 0 ? 'initial' : ''}`}
             >
-              <Image params={slide} />
+              <ResponsiveImage params={slide} />
               <div className="slide-content">
                 <Text params={slide.slideText} />
                 <ScrollTo targetID={slide.scrollTarget} />
