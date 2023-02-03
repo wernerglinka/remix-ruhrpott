@@ -1,0 +1,60 @@
+#hamburger {
+  position: relative;
+  z-index: 3;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  margin-left: auto;
+}
+#hamburger:focus {
+  outline: 0;
+}
+
+#hamburger span,
+#hamburger span:before,
+#hamburger span:after {
+  cursor: pointer;
+  height: 3px;
+  width: 30px;
+  background-color: #000;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  display: block;
+  content: "";
+  transition: all 0.3s ease-in-out;
+}
+
+#hamburger span:before {
+  top: -7px;
+}
+#hamburger span:after {
+  top: auto;
+  bottom: -7px;
+}
+#hamburger:hover span,
+#hamburger:hover span:before,
+#hamburger:hover span:after {
+  background: var(--color-link-hover);
+}
+
+.menu-active #hamburger span {
+  background-color: transparent;
+}
+.menu-active #hamburger span:before,
+.menu-active #hamburger span:after {
+  top: 0;
+  background-color: var(--color-highlight);
+}
+.menu-active #hamburger span:before {
+  transform: rotate(45deg);
+}
+.menu-active #hamburger span:after {
+  transform: rotate(-45deg);
+}
+.menu-active #hamburger :hover span:before,
+.menu-active #hamburger :hover span:after {
+  background-color: var(--color-link-hover);
+}

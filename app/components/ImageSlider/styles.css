@@ -1,3 +1,235 @@
-.slides li:first-of-type {
-  background-color: blue;
+.slides-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.slides-nav {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.slides-nav li {
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+}
+.slides-nav li:before {
+  border: none;
+}
+    
+.slides-nav li a {
+  display: block;
+  height: 100%;
+  width: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.slides-nav li a:hover {
+  /* make li extend to the left*/
+  width: 70px;
+}
+.slides-nav li a:hover span {
+  background-color: var(--color-link-hover);
+}
+      
+.slides-nav li a.active {
+  /* make li extend to the left*/
+  width: 70px;
+  cursor : default;
+  pointer-events: none;
+}
+.slides-nav li a.active span {
+  background-color: var(--color-highlight);
+}
+.slides-nav li a span {
+  display: block;
+  width: 100%;
+  margin-top: 24px;
+  height: 2px;
+  background-color: var(--color-white);
+  pointer-events: none;
+}
+
+.slides {
+  width: 100vw;
+  height: 100vh;
+}
+.slides li {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  position: absolute;
+  z-index: 1;
+}    
+.slides li.initial {
+  z-index: 3;
+}
+
+.slides li.active {
+  z-index: 3;
+  animation: slide 1s 1;
+}
+.slides li:not(.active) {
+  animation: hidden 1s 1;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes hidden {
+  0% {
+    z-index: 2;
+  }
+  100% {
+    z-index: 2;
+  }
+}
+  
+.slides li .sanity-image-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 0 !important;
+  overflow: hidden;
+}      
+  
+.slides li .sanity-image-wrapper img {
+  object-fit: cover;
+  object-position: center;
+  width: 100vw;
+  height: 100vh;
+}
+    
+  
+.slides li .slide-content {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color: var(--color-caption-background);
+  backdrop-filter: blur(5px);
+  padding: 100px;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 2s ease-in-out;
+}
+@media (max-width: 1200px) {
+  .slides li .slide-content {
+    padding: 10vw;
+  }
+}
+@media (max-width: 1024px) {
+  .slides li .slide-content {
+    width: 75vw;
+    padding: 6vw;
+  }
+}
+@media (max-width: 600px) {
+  .slides li .slide-content {
+    padding: 40px 40px 60px;
+  }
+}
+@media (max-width: 360px) {
+  .slides li .slide-content {
+    top: auto;
+    bottom: 0;
+    padding: 20px 20px 60px;
+  }
+}
+.slides li .slide-content h1 {
+  font-size: 5vw;
+  font-weight: 700;
+  color: var(--color-white);
+  margin:  0 0 0.5em;
+}
+@media (max-width: 1200px) {
+  .slides li .slide-content h1 {
+    font-size: 6rem;
+  }
+}
+@media (max-width: 600px) {
+  .slides li .slide-content h1 {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 360px) {
+  .slides li .slide-content h1 {
+    font-size: 3rem;
+  }
+}
+.slides li .slide-content p {
+  font-size: 1.5vw;
+  line-height: 1.5;
+  color: var(--color-white);;
+  margin: 0;
+}       
+@media (max-width: 1200px) {
+  .slides li .slide-content p {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 767px) {
+  .slides li .slide-content p {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 600px) {
+  .slides li .slide-content p {
+    font-size: 1.6rem;
+  }
+}
+    
+
+.slides li.active .slide-content,
+.slides li.initial .slide-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+  
+.slides li .scroll-to {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+} 
+.slides li .scroll-to .icon-wrapper {
+  pointer-events: none;
+}
+  
+.slides li .scroll-to svg {
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+}  
+.slides li .scroll-to svg * {
+  stroke: var(--color-white);
+}     
+      
+.slides li .scroll-to:hover svg * {
+  stroke: var(--color-highlight);
 }

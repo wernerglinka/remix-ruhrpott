@@ -23,9 +23,17 @@ export default function ImageSlider(props) {
           )
         })}
       </ul>
+      <ul className="slides-nav">
+        {props.sectionBlocks[0].slides.map((slide, index) => {
+          return (
+            <li key={`imageNavElement${index}`}>
+              <a className="{`js-slide-trigger ${index === 0 && 'active'`}" data-slide-id="#slide{index}">
+                <span></span>
+              </a>
+            </li>
+          )
+        })}
+      </ul>
     </div>
   )
-} 
-
-
-
+}

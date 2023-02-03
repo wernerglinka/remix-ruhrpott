@@ -12,7 +12,7 @@ export default function Text({params}) {
         
       {params?.subTitle && <p className="sub-title">{params?.subTitle}</p>}
 
-      {params?.portableTextBody && <div className="prose">{params?.portableTextBody}</div>}
+      {params?.portableTextBody && <div className="prose"><p>{params?.portableTextBody}</p></div>}
 
       {params?.cta?.url && <CTA params={params?.cta} />}
 

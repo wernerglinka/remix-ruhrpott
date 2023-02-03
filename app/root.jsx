@@ -9,6 +9,16 @@ import {
   useLoaderData,
 } from "@remix-run/react";
 
+import globalStyles from './styles/global-styles.css';
+
+export const links = () =>{
+  return [
+    {
+      rel: "stylesheet",
+      href: globalStyles
+    }
+  ]
+}
 export const meta = () => ({
   charset: "utf-8",
   viewport: "width=device-width,initial-scale=1",
