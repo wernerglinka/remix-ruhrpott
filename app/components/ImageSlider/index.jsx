@@ -2,7 +2,7 @@ import {ScrollTo} from '../ScrollTo';
 import Text from '../Text';
 import {ResponsiveImage} from '../ResponsiveImage';
 
-export default ImageSlider = function(props) {
+export default function ImageSlider(props) {
 
   return (
     <div className="slides-container">
