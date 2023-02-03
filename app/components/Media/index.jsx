@@ -3,4 +3,3 @@ export default props => {
     <p>this is the Media component</p>
   )
 }
-

@@ -1,4 +1,4 @@
-import Templates from './index';
+import Templates from '../index';
 
 /**
  * This function takes an array of sections and renders each section using 

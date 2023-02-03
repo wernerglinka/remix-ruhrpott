@@ -3,9 +3,20 @@ import groq from 'groq';
 import {getClient} from '~/sanity/client';
 
 import Layout from '../components/Layout';
-import Templates from '../templates';
+import Templates from '../components';
 
 import {iterate} from '../utilities/iterate';
+
+import homeStyles from '../styles/home-styles.css';
+
+export const links = () =>{
+  return [
+    {
+      rel: "stylesheet",
+      href: homeStyles
+    }
+  ]
+}
 
 export const meta = (data) => {
   const {title, description} = data.data;

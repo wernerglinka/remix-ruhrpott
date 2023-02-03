@@ -1,8 +1,8 @@
-import {ScrollTo} from './ScrollTo';
-import {Text} from './Text';
-import {ResponsiveImage} from './ResponsiveImage';
+import {ScrollTo} from '../ScrollTo';
+import Text from '../Text';
+import {ResponsiveImage} from '../ResponsiveImage';
 
-export const ImageSlider = function(props) {
+export default ImageSlider = function(props) {
 
   return (
     <div className="slides-container">

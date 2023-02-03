@@ -1,4 +1,4 @@
-export const CTA = function({params}) {
+export default CTA = function({params}) {
 
   let classString = "";
   if (params.kind === "button") {
