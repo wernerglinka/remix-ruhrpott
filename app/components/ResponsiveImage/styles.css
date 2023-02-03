@@ -1,0 +1,35 @@
+sanity-image-wrapper {
+  position: relative;
+  width: 100%;
+}  
+
+sanity-image-wrapper img {
+  display: block;
+  width: 100%;
+}
+
+sanity-image-wrapper .low-res {
+  filter: blur(10px);
+  transition: opacity 0.4s ease-in-out;
+}
+
+sanity-image-wrapper .high-res {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+/*
+the hi-res image may have a sligly different height. That may be due to the low-res
+image size being restricked to fewer steps when generating the image. To avoid the
+low-res showing under the high-res image, the low-res will be faded out as the high
+res is faded in
+*/
+sanity-image-wrapper.done .high-res {
+  opacity: 1;
+}
+sanity-image-wrapper.done .low-res {
+  opacity: 0;
+}
+
