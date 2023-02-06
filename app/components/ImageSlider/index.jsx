@@ -33,11 +33,12 @@ export default function ImageSlider(props) {
     <div className="slides-container">
       <ul className="slides">
         {props.sectionBlocks[0].slides.map((slide, index) => {
+          const lastSlideIndex = props.sectionBlocks[0].slides.length - 1;
           return (
             <li 
               key={slide.slideImage.alt}
               id={`slide${index}`}
-              className={`slide js-slide ${index === 0 ? 'initial' : ''}`}
+              className={`slide js-slide ${index === lastSlideIndex ? 'initial' : ''}`}
             >
               <ResponsiveImage params={slide} />
               <div className="slide-content">
