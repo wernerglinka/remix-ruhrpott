@@ -1,3 +1,4 @@
+import { useEffect, useState, useRef } from "react";
 import ScrollTo from '../ScrollTo';
 import Text from '../Text';
 import ResponsiveImage from '../ResponsiveImage';
@@ -7,24 +8,27 @@ export default function ImageSlider(props) {
    Function to manages the slides on this slider. It first removes the active class from elements with the class 'js-slide-trigger'. It then adds the active class to the element that was clicked (the 'e' argument). It then gets the data-slide-id attribute from the clicked element and selects all elements with the class 'js-slide'. It removes both the initial and active classes from each of these elements. Finally, it selects the element with an id matching the data-slide-id attribute of the clicked element and adds an active class to it. 
   */
   function manageSlides(e) {
-    const slideTriggers = document.querySelectorAll('.js-slide-trigger');
-    // Remove active class from all slide triggers
-    slideTriggers.forEach(trigger => {  
-      trigger.classList.remove('active');
+    // Remove active class from all slide nav items
+    navRefs.current.forEach(thisNavItem => {  
+      thisNavItem.classList.remove('active');
     });
-    // add active class to this slide trigger
+    // add active class to this nav item
     e.target.classList.add('active');
     
-    const slideId = e.target.dataset.slideId;
-    const slides = document.querySelectorAll('.js-slide');
     // Hide all slides
-    slides.forEach(slide => {
+    slideRefs.current.forEach(slide => {
       slide.classList.remove('initial', 'active');
     });
+    // Get the slide id from the clicked nav item
+    const slideId = e.target.dataset.slideId;
     // Show this slide
-    const thisSlide = document.querySelector(slideId);
-    thisSlide.classList.add("active");
+    document.querySelector(slideId).classList.add("active");
   }
+
+  const numberOfSlides = props.sectionBlocks[0].slides.length - 1;
+
+  const navRefs = useRef([]);
+  const slideRefs = useRef([]);
 
   return (
     /**
@@ -32,13 +36,13 @@ export default function ImageSlider(props) {
     */
     <div className="slides-container">
       <ul className="slides">
-        {props.sectionBlocks[0].slides.map((slide, index) => {
-          const lastSlideIndex = props.sectionBlocks[0].slides.length - 1;
+        {props.sectionBlocks[0].slides.slice(0).map((slide, index) => {
           return (
             <li 
               key={slide.slideImage.alt}
               id={`slide${index}`}
-              className={`slide js-slide ${index === lastSlideIndex ? 'initial' : ''}`}
+              className={`slide js-slide ${index === numberOfSlides ? 'initial' : ''}`.trim()}
+              ref={e => slideRefs.current[index] = e}
             >
               <ResponsiveImage params={slide} />
               <div className="slide-content">
@@ -54,8 +58,9 @@ export default function ImageSlider(props) {
           return (
             <li key={`imageNavElement${index}`}>
               <a 
-                className={`js-slide-trigger ${index === 0 && 'active'}`} 
-                data-slide-id={`#slide${index}`}
+                className={`js-slide-trigger ${index === 0 ? 'active' : ''}`.trim()} 
+                data-slide-id={`#slide${numberOfSlides - index}`}
+                ref={e => navRefs.current[index] = e}
                 onClick={(e) => manageSlides(e)}
               >
                 <span></span>
